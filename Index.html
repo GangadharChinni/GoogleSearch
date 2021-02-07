@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/Common.js"></script>
+    <title>Google Search</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.input-text').on("keypress", function (e) {
+                if (e.keyCode == 13) {
+                    if ($('.input-text').val().trim() != "")
+                        SearchData($('.input-text').val());
+                }
+            });
+            $('#btnS').on("click", function (e) {
+                if ($('.input-text').val().trim() != "")
+                    SearchData($('.input-text').val());
+                return false;
+            });
+            $('#btnl').on("click", function (e) {
+                if ($('.input-text').val().trim() != "")
+                    SearchDataIFL($('.input-text').val());
+                return false;
+            });
+            
+        });
+    </script>
+    <style type="text/css">
+        .footer {
+            position: fixed !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <!-- HEADER START -->
+        <header class="navbar navbar-custom container-full-sm" id="header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-12">
+                            <div class="top-right-link left-side">
+                                <ul>
+                                    <li class="login-icon content">
+                                        <a href="" title="About">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="" title="Store">Store</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-12">
+                            <div class="top-right-link right-side">
+                                <ul>
+                                    <li class="login-icon content">
+                                        <a href="" title="Gmail">Gmail</a>
+                                    </li>
+                                    <li>
+                                        <a href="ImageSerchPage.html" title="Images">Images</a>
+                                    </li>
+                                    <li>
+                                        <a href="AdvancedSearch.html" title="Advanced Search">Advanced Search</a>
+                                    </li>
+                                    <li>
+                                        <a href="" class="btn btn-color" title="Sign In"> Sign In</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="ptb-70">
+            <div class="row pt-70">
+                <div class="col-md-12 text-center">
+                    <img src="images/logo.png" />
+                </div>                
+            </div>
+            <div class="row mtb-20">
+                <div class="col-4">
+                </div>
+                <div class="col-4">
+                    <div class="search-box">
+                        <input class="input-text" type="text" placeholder="Search Google or type a URL">
+                        <button class="search-btn"></button>
+                    </div>
+                </div>
+                <div class="col-4">
+                    
+                </div>
+            </div>
+            <div class="row">
+                <!--<div class="col-4">
+                </div>-->
+                <div class="col-12 text-center">
+                    <a class="btn btn-color homesearch" id="btnS" title="Sign In">Google Search</a>
+                    <a class="btn btn-color homesearch" id="btnl" title="Sign In">I'm Feeling Lucky</a>
+                </div>
+                <!--<div class="col-4">
+                </div>-->
+            </div>
+        </section>
+
+        <!-- FOOTER START -->
+        <div class="footer">
+            <div class="container">
+                <div class="footer-inner">
+                    <div class="footer-bottom ">
+                        <hr>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="site-link left-side">
+                                    <ul>
+                                        <li><a href="https://www.google.com/intl/en_in/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&amp;utm_source=google.com&amp;utm_medium=referral&amp;utm_campaign=google_hpafooter&amp;fg=1">Advertising</a></li>
+                                        <li><a href="https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&amp;utm_source=google.com&amp;utm_medium=referral&amp;utm_campaign=google_hpbfooter&amp;fg=1">Business</a></li>
+                                        <li><a href="https://about.google/?utm_source=google-IN&amp;utm_medium=referral&amp;utm_campaign=hp-footer&amp;fg=1">About </a></li>
+                                        <li><a href="https://google.com/search/howsearchworks/?fg=1">How Search works</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            
+                            <div class="col-6 ">
+                                <div class="site-link right-side">
+                                    <ul>
+                                        <li><a href="https://policies.google.com/privacy?amp;fg=1">Privacy</a></li>
+                                        <li><a href="https://policies.google.com/terms?amp;fg=1">Terms</a></li>
+                                        <li class="settingNav">
+                                            <a href="#">Settings </a>
+                                            <div class="cart-dropdown header-link-dropdown">
+                                                <ul class="cart-list link-dropdown-list">
+                                                    <li>
+                                                        <a href="https://www.google.co.in/preferences?hl=en-IN&amp;fg=1" style="padding-left:10px !important">Search settings</a>
+                                                    </li>
+                                                    <li>
+                                                        <a  href="AdvancedSearch.html">Advanced search</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://myactivity.google.com/product/search?utm_source=google&amp;hl=en-IN&amp;fg=1">Search history</a>
+                                                    </li>
+                                                    <li>
+                                                        <a  href="https://support.google.com/websearch/?p=ws_results_help&amp;hl=en-IN&amp;fg=1">Search help</a>
+                                                    </li>
+                                                    <li>
+                                                        <a >Send feedback</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FOOTER END -->
+    </div>
+</body>
+</html>
